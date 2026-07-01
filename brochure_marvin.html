@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvin Rustrian — Fotografía de Bodas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 80px 32px; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 100px 32px 80px; border-bottom: 1px solid #2a2a2a; }
+  .eyebrow {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  h1 {
+    font-size: 3.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .subtitle {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #999;
+    letter-spacing: 0.05em;
+  }
+  .ornament {
+    width: 40px;
+    height: 1px;
+    background: #c9a96e;
+    margin: 48px auto;
+  }
+
+  /* Section */
+  section { padding: 80px 0; border-bottom: 1px solid #2a2a2a; }
+  section:last-child { border-bottom: none; }
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    color: #ffffff;
+  }
+  h2 .accent { color: #c9a96e; font-style: italic; }
+  p { font-size: 1.05rem; color: #c8c8c8; margin-bottom: 16px; font-weight: 300; }
+  p strong { color: #f5f5f5; font-weight: 400; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 48px; }
+  .stat { text-align: center; }
+  .stat-number {
+    font-size: 2.6rem;
+    font-weight: 400;
+    color: #c9a96e;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 300;
+  }
+
+  /* Bodas */
+  .boda-card {
+    background: #141414;
+    border-left: 2px solid #c9a96e;
+    padding: 24px 32px;
+    margin-bottom: 16px;
+  }
+  .boda-date {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 8px;
+    font-weight: 300;
+  }
+  .boda-title { font-size: 1.25rem; color: #ffffff; margin-bottom: 4px; font-weight: 400; }
+  .boda-detail { font-size: 0.95rem; color: #888; font-weight: 300; }
+
+  /* Estilo */
+  .estilo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .estilo-item {
+    border-top: 1px solid #2a2a2a;
+    padding-top: 16px;
+  }
+  .estilo-item h3 {
+    font-size: 1rem;
+    color: #c9a96e;
+    margin-bottom: 6px;
+    font-weight: 400;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  .estilo-item p { font-size: 0.9rem; color: #999; margin: 0; }
+
+  /* Contacto */
+  .contacto { text-align: center; }
+  .contacto-handle {
+    font-size: 1.6rem;
+    color: #c9a96e;
+    margin: 24px 0 8px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .contacto-sub {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 300;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 60px 32px;
+    border-top: 1px solid #2a2a2a;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    color: #555;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  footer .marca { color: #c9a96e; }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .container { padding: 60px 24px; }
+    h1 { font-size: 2.4rem; }
+    .stats { grid-template-columns: 1fr; gap: 32px; }
+    .estilo-grid { grid-template-columns: 1fr; }
+    .hero { padding: 80px 24px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">Fotografía de Bodas</div>
+  <h1>Marvin<br>Rustrian</h1>
+  <div class="ornament"></div>
+  <div class="subtitle">Segunda Cámara · Norkevin Photography</div>
+</div>
+
+<div class="container">
+
+  <section>
+    <h2>Sobre <span class="accent">mí</span></h2>
+    <p>Fotógrafo guatemalteco especializado en capturar la esencia de los momentos más importantes. Mi enfoque se centra en la elegancia, la emoción genuina y los detalles que cuentan historias.</p>
+    <p>Trabajo como <strong>Segunda Cámara</strong> junto a Norkevin Photography, aportando una mirada fresca y técnica a cada boda. Cada imagen busca ser atemporal, natural y con alma.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">2</span>
+        <span class="stat-label">Bodas 2026–27</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2da</span>
+        <span class="stat-label">Cámara</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">GT</span>
+        <span class="stat-label">Guatemala</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Próximas <span class="accent">bodas</span></h2>
+
+    <div class="boda-card">
+      <div class="boda-date">Sábado · 21 Nov 2026</div>
+      <div class="boda-title">Boda Andrea Cano</div>
+      <div class="boda-detail">Parque Las Américas · Ciudad de Guatemala</div>
+    </div>
+
+    <div class="boda-card">
+      <div class="boda-date">Sábado · 23 Ene 2027</div>
+      <div class="boda-title">Boda Astrid Cerón Alonzo</div>
+      <div class="boda-detail">Museo de La Merced · Ciudad de Guatemala</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mi <span class="accent">estilo</span></h2>
+
+    <div class="estilo-grid">
+      <div class="estilo-item">
+        <h3>Naturalidad</h3>
+        <p>Capturo la emoción real, sin poses forzadas ni momentos inventados.</p>
+      </div>
+      <div class="estilo-item">
+        <h3>Detalles</h3>
+        <p>Los pequeños momentos importan: una mirada, un gesto, una lágrima.</p>
+      </div>
+      <div class="estilo-item">
+        <h3>Elegancia</h3>
+        <p>Composición cuidada, luz natural y un toque editorial en cada toma.</p>
+      </div>
+      <div class="estilo-item">
+        <h3>Discreción</h3>
+        <p>Trabajo en segundo plano para que la boda fluya sin interrupciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto">
+    <h2>Contacto</h2>
+    <div class="ornament"></div>
+    <div class="contacto-handle">@mrustrian_gt</div>
+    <div class="contacto-sub">Instagram · Bodas y retratos</div>
+  </section>
+
+</div>
+
+<footer>
+  Brochure generado para <span class="marca">Marvin Rustrian</span> · 2026
+</footer>
+
+</body>
+</html>
