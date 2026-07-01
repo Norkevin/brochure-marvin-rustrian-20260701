@@ -2,104 +2,446 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brochure Bodas - Marvin Rustrian</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda — Marvin Rustrian</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(135deg,#faf5ff,#fce7f3);min-height:100vh;padding:32px 16px;color:#1e1b4b}
-  .wrap{max-width:1100px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 25px 50px -12px rgba(0,0,0,.15);overflow:hidden}
-  header{background:linear-gradient(135deg,#7c3aed,#a78bfa,#f472b6);color:#fff;padding:40px 32px}
-  header h1{font-size:32px;margin-bottom:8px;font-weight:700}
-  header .sub{font-size:14px;opacity:.95}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px 32px;background:linear-gradient(180deg,#faf5ff,#fff);border-bottom:1px solid #e9d5ff}
-  .stat{text-align:center;padding:16px;background:#fff;border-radius:12px;border:1px solid #e9d5ff}
-  .stat .num{font-size:32px;font-weight:700;color:#7c3aed}
-  .stat .label{font-size:12px;color:#6b7280;text-transform:uppercase;margin-top:4px}
-  main{padding:32px}
-  h2{font-size:20px;color:#7c3aed;margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid #f3e8ff}
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  th{text-align:left;padding:10px;background:#faf5ff;color:#6b21a8;font-weight:600;font-size:12px;text-transform:uppercase}
-  td{padding:12px 10px;border-bottom:1px solid #f3f4f6}
-  td.num{color:#9ca3af;font-weight:600;width:30px}
-  td.title{font-weight:600;color:#1f2937}
-  td.fecha{color:#6b21a8;font-weight:500;white-space:nowrap}
-  tr:hover{background:#faf5ff}
-  .ok{background:#dcfce7;color:#166534;padding:3px 8px;border-radius:6px;font-size:12px;font-weight:600}
-  .pend{background:#fef3c7;color:#92400e;padding:3px 8px;border-radius:6px;font-size:12px;font-weight:600}
-  .emp{padding:3px 8px;border-radius:6px;font-size:11px;font-weight:600}
-  .emp.norkevin{background:#dbeafe;color:#1e40af}
-  .emp.astral{background:#fce7f3;color:#9d174d}
-  footer{padding:24px 32px;background:#faf5ff;color:#6b21a8;font-size:12px;text-align:center;border-top:1px solid #e9d5ff}
-  @media(max-width:600px){
-    header h1{font-size:24px}
-    .stats{grid-template-columns:1fr}
-    table{font-size:12px}
-    th,td{padding:8px 6px}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --negro: #0a0a0a;
+    --negro-2: #121212;
+    --negro-3: #1a1a1a;
+    --linea: #1f1f1f;
+    --dorado: #c9a96e;
+    --dorado-suave: #b08d4f;
+    --blanco: #f5f5f5;
+    --gris: #888;
+    --gris-claro: #b8b8b8;
   }
-  @media print{
-    body{background:#fff;padding:0}
-    .wrap{box-shadow:none;border-radius:0}
-    header{background:#7c3aed !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .stat,.emp,.ok,.pend{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  html, body { background: var(--negro); }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--blanco);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .sans {
+    font-family: 'Helvetica Neue', 'Inter', system-ui, sans-serif;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+
+  /* ===== HERO EDITORIAL ===== */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 60px;
+    position: relative;
+    border-bottom: 1px solid var(--linea);
+  }
+
+  .hero .num {
+    position: absolute;
+    top: 32px;
+    left: 28px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--dorado);
+    font-weight: 300;
+  }
+
+  .hero .year {
+    position: absolute;
+    top: 32px;
+    right: 28px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--gris);
+    font-weight: 300;
+  }
+
+  .eyebrow {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .title {
+    font-size: clamp(3rem, 9vw, 5.6rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .title em {
+    font-style: italic;
+    color: var(--dorado);
+    font-weight: 300;
+  }
+
+  .rule {
+    width: 80px;
+    height: 1px;
+    background: var(--dorado);
+    margin: 48px 0;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--gris-claro);
+    max-width: 520px;
+    line-height: 1.65;
+  }
+
+  .lead em {
+    color: var(--blanco);
+    font-style: italic;
+  }
+
+  /* ===== SECCIONES ===== */
+  section {
+    padding: 110px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 56px;
+  }
+
+  .sec-num {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    color: var(--dorado);
+    letter-spacing: 0.3em;
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  h2 em {
+    font-style: italic;
+    color: var(--dorado);
+    font-weight: 300;
+  }
+
+  /* ===== ABOUT ===== */
+  .about p {
+    font-size: 1.1rem;
+    color: var(--gris-claro);
+    margin-bottom: 22px;
+    font-weight: 300;
+    max-width: 620px;
+  }
+  .about p strong { color: var(--blanco); font-weight: 400; }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--linea);
+  }
+  .meta-item .k {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 8px;
+    font-weight: 300;
+  }
+  .meta-item .v {
+    font-size: 1rem;
+    color: var(--blanco);
+    font-weight: 400;
+  }
+
+  /* ===== BODAS — formato agenda editorial ===== */
+  .agenda-item {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--linea);
+    align-items: start;
+  }
+  .agenda-item:last-child { border-bottom: 1px solid var(--linea); }
+
+  .agenda-date {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .agenda-date .day {
+    display: block;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    letter-spacing: 0;
+    font-weight: 400;
+    text-transform: none;
+    font-family: 'Georgia', serif;
+  }
+
+  .agenda-body .ttl {
+    font-size: 1.35rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+  .agenda-body .place {
+    font-size: 0.95rem;
+    color: var(--gris);
+    font-weight: 300;
+  }
+  .agenda-body .role {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 12px;
+    border: 1px solid var(--dorado-suave);
+    color: var(--dorado);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .agenda-num {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: var(--dorado);
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0.5;
+  }
+
+  /* ===== ESTILO ===== */
+  .filo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 40px;
+  }
+  .filo-item {
+    padding-right: 16px;
+  }
+  .filo-item h3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .filo-item p {
+    font-size: 1rem;
+    color: var(--gris-claro);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ===== CONTACTO ===== */
+  .contacto {
+    text-align: center;
+    padding: 140px 0;
+  }
+  .contacto .eyebrow { margin-bottom: 56px; }
+  .contacto .handle {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    color: #ffffff;
+    margin: 32px 0 12px;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+  .contacto .handle em { color: var(--dorado); font-style: italic; }
+  .contacto .note {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.85rem;
+    color: var(--gris);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 40px 28px;
+    border-top: 1px solid var(--linea);
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gris);
+    font-weight: 300;
+  }
+  footer .marca { color: var(--dorado); }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 640px) {
+    section { padding: 80px 0; }
+    .hero { min-height: 80vh; padding: 100px 0 60px; }
+    .meta { grid-template-columns: 1fr; gap: 24px; }
+    .filo { grid-template-columns: 1fr; gap: 40px; }
+    .agenda-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .agenda-num { display: none; }
+    .agenda-date .day { font-size: 1.3rem; }
+    .contacto { padding: 100px 0; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>📸 Brochure · Bodas de Marvin Rustrian</h1>
-    <div class="sub">Generado el 01/07/2026 · Norkevin Photography + Astral Weddings</div>
-  </header>
-  <div class="stats">
-    <div class="stat"><div class="num">2</div><div class="label">Bodas confirmadas</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">Futuras</div></div>
-    <div class="stat"><div class="num">0</div><div class="label">Pasadas</div></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="num sans">N° 01 / 2026</div>
+  <div class="year sans">MMXXVI</div>
+
+  <div class="wrap">
+    <div class="eyebrow sans">Agenda · Bodas 2026–2027</div>
+    <h1 class="title">Marvin<br><em>Rustrian</em></h1>
+    <div class="rule"></div>
+    <p class="lead">Fotógrafo guatemalteco especializado en <em>segunda cámara</em> para bodas. Un registro editorial, silencioso y elegante de los momentos que importan.</p>
   </div>
-  <main>
-      <h2>📅 Bodas futuras (2)</h2>
-      <table>
-        <thead><tr><th>#</th><th>Boda</th><th>Fecha</th><th>Lugar</th><th>Puesto</th><th>Empresa</th></tr></thead>
-        <tbody>
-      <tr>
-        <td class="num">1</td>
-        <td class="title">Andrea Cano</td>
-        <td class="fecha">Sábado 21 nov 2026</td>
-        <td>Parque Las Américas</td>
-        <td>Segunda Cámara</td>
-        <td><span class="emp norkevin">NORKEVIN</span></td>
-      </tr>
-      <tr>
-        <td class="num">2</td>
-        <td class="title">Boda Astrid Ceron Alonzo</td>
-        <td class="fecha">Sábado 23 ene 2027</td>
-        <td>Museo de La Merced, 11 Avenida, Ciudad de Guatemala, Guatemala</td>
-        <td>Segunda Cámara</td>
-        <td><span class="emp norkevin">NORKEVIN</span></td>
-      </tr>
-        </tbody>
-      </table>
-      <h2>📷 Detalle por boda</h2>
-      <table>
-        <thead><tr><th>#</th><th>Boda</th><th>Equipo</th></tr></thead>
-        <tbody>
-      <tr>
-        <td class="num">1</td>
-        <td class="title">Andrea Cano</td>
-        <td>Kevin Lemus (P1) · Marvin Rustrian (P2) · Jose Teque (V1)</td>
-      </tr>
-      <tr>
-        <td class="num">2</td>
-        <td class="title">Boda Astrid Ceron Alonzo</td>
-        <td>Kevin Lemus (P1) · Marvin Rustrian (P2)</td>
-      </tr>
-        </tbody>
-      </table>
-  </main>
-  <footer>
-    <div>📩 Contacto: norkevinfoto@gmail.com &middot; WhatsApp +502 3164 8254</div>
-    <div style="margin-top:8px;opacity:.7">Reporte generado el 01-jul-2026 &middot; Confidencial para Marvin Rustrian</div>
-    <div style="margin-top:8px"><a href="https://wa.me/50231648254" style="color:#7c3aed;font-weight:600;text-decoration:none">¿Dudas? Escribinos por WhatsApp →</a></div>
-  </footer>
-</div>
+</header>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num sans">— 01</span>
+      <h2>Sobre <em>mí</em></h2>
+    </div>
+
+    <p>Mi trabajo se enfoca en capturar la <strong>esencia</strong> de los momentos más importantes de una boda, con un enfoque editorial y natural. La elegancia y la emoción genuina son los pilares de cada imagen.</p>
+    <p>Trabajo como <strong>Segunda Cámara</strong> junto a Norkevin Photography, aportando una mirada fresca, técnica y discreta al equipo de cobertura.</p>
+
+    <div class="meta">
+      <div class="meta-item">
+        <div class="k sans">Especialidad</div>
+        <div class="v">Segunda Cámara</div>
+      </div>
+      <div class="meta-item">
+        <div class="k sans">Bodas 2026–27</div>
+        <div class="v">2 confirmadas</div>
+      </div>
+      <div class="meta-item">
+        <div class="k sans">Base</div>
+        <div class="v">Guatemala</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num sans">— 02</span>
+      <h2>Próximas <em>fechas</em></h2>
+    </div>
+
+    <div class="agenda-item">
+      <div class="agenda-date sans">
+        <span class="day">21</span>
+        Nov · 2026
+      </div>
+      <div class="agenda-body">
+        <div class="ttl">Boda Andrea Cano</div>
+        <div class="place">Parque Las Américas · Ciudad de Guatemala</div>
+        <span class="role">Segunda Cámara</span>
+      </div>
+      <div class="agenda-num">01</div>
+    </div>
+
+    <div class="agenda-item">
+      <div class="agenda-date sans">
+        <span class="day">23</span>
+        Ene · 2027
+      </div>
+      <div class="agenda-body">
+        <div class="ttl">Boda Astrid Cerón Alonzo</div>
+        <div class="place">Museo de La Merced · Ciudad de Guatemala</div>
+        <span class="role">Segunda Cámara</span>
+      </div>
+      <div class="agenda-num">02</div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTILO -->
+<section class="filosofia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num sans">— 03</span>
+      <h2>Mi <em>estilo</em></h2>
+    </div>
+
+    <div class="filo">
+      <div class="filo-item">
+        <h3>Naturalidad</h3>
+        <p>Capturo la emoción real, sin poses forzadas ni momentos inventados.</p>
+      </div>
+      <div class="filo-item">
+        <h3>Detalles</h3>
+        <p>Una mirada, un gesto, una lágrima. Los momentos pequeños importan.</p>
+      </div>
+      <div class="filo-item">
+        <h3>Elegancia</h3>
+        <p>Composición cuidada, luz natural y un toque editorial en cada toma.</p>
+      </div>
+      <div class="filo-item">
+        <h3>Discreción</h3>
+        <p>Trabajo en segundo plano para que la boda fluya sin interrupciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto">
+  <div class="wrap">
+    <div class="eyebrow sans">Contacto</div>
+    <div class="handle">@<em>mrustrian_gt</em></div>
+    <div class="note">Instagram · Bodas y retratos</div>
+  </div>
+</section>
+
+<footer>
+  <span class="marca">Marvin Rustrian</span> · Agenda 2026
+</footer>
+
 </body>
 </html>
