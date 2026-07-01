@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brochure Bodas - Marvin Rustrian</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(135deg,#faf5ff,#fce7f3);min-height:100vh;padding:32px 16px;color:#1e1b4b}
+  .wrap{max-width:1100px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 25px 50px -12px rgba(0,0,0,.15);overflow:hidden}
+  header{background:linear-gradient(135deg,#7c3aed,#a78bfa,#f472b6);color:#fff;padding:40px 32px}
+  header h1{font-size:32px;margin-bottom:8px;font-weight:700}
+  header .sub{font-size:14px;opacity:.95}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px 32px;background:linear-gradient(180deg,#faf5ff,#fff);border-bottom:1px solid #e9d5ff}
+  .stat{text-align:center;padding:16px;background:#fff;border-radius:12px;border:1px solid #e9d5ff}
+  .stat .num{font-size:32px;font-weight:700;color:#7c3aed}
+  .stat .label{font-size:12px;color:#6b7280;text-transform:uppercase;margin-top:4px}
+  main{padding:32px}
+  h2{font-size:20px;color:#7c3aed;margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid #f3e8ff}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;padding:10px;background:#faf5ff;color:#6b21a8;font-weight:600;font-size:12px;text-transform:uppercase}
+  td{padding:12px 10px;border-bottom:1px solid #f3f4f6}
+  td.num{color:#9ca3af;font-weight:600;width:30px}
+  td.title{font-weight:600;color:#1f2937}
+  td.fecha{color:#6b21a8;font-weight:500;white-space:nowrap}
+  tr:hover{background:#faf5ff}
+  .ok{background:#dcfce7;color:#166534;padding:3px 8px;border-radius:6px;font-size:12px;font-weight:600}
+  .pend{background:#fef3c7;color:#92400e;padding:3px 8px;border-radius:6px;font-size:12px;font-weight:600}
+  .emp{padding:3px 8px;border-radius:6px;font-size:11px;font-weight:600}
+  .emp.norkevin{background:#dbeafe;color:#1e40af}
+  .emp.astral{background:#fce7f3;color:#9d174d}
+  footer{padding:24px 32px;background:#faf5ff;color:#6b21a8;font-size:12px;text-align:center;border-top:1px solid #e9d5ff}
+  @media(max-width:600px){
+    header h1{font-size:24px}
+    .stats{grid-template-columns:1fr}
+    table{font-size:12px}
+    th,td{padding:8px 6px}
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    .wrap{box-shadow:none;border-radius:0}
+    header{background:#7c3aed !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .stat,.emp,.ok,.pend{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📸 Brochure · Bodas de Marvin Rustrian</h1>
+    <div class="sub">Generado el 01/07/2026 · Norkevin Photography + Astral Weddings</div>
+  </header>
+  <div class="stats">
+    <div class="stat"><div class="num">2</div><div class="label">Bodas confirmadas</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">Futuras</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">Pasadas</div></div>
+  </div>
+  <main>
+      <h2>📅 Bodas futuras (2)</h2>
+      <table>
+        <thead><tr><th>#</th><th>Boda</th><th>Fecha</th><th>Lugar</th><th>Puesto</th><th>Empresa</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td class="title">Andrea Cano</td>
+        <td class="fecha">Sábado 21 nov 2026</td>
+        <td>Parque Las Américas</td>
+        <td>Segunda Cámara</td>
+        <td><span class="emp norkevin">NORKEVIN</span></td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td class="title">Boda Astrid Ceron Alonzo</td>
+        <td class="fecha">Sábado 23 ene 2027</td>
+        <td>Museo de La Merced, 11 Avenida, Ciudad de Guatemala, Guatemala</td>
+        <td>Segunda Cámara</td>
+        <td><span class="emp norkevin">NORKEVIN</span></td>
+      </tr>
+        </tbody>
+      </table>
+      <h2>📷 Detalle por boda</h2>
+      <table>
+        <thead><tr><th>#</th><th>Boda</th><th>Equipo</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td class="title">Andrea Cano</td>
+        <td>Kevin Lemus (P1) · Marvin Rustrian (P2) · Jose Teque (V1)</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td class="title">Boda Astrid Ceron Alonzo</td>
+        <td>Kevin Lemus (P1) · Marvin Rustrian (P2)</td>
+      </tr>
+        </tbody>
+      </table>
+  </main>
+  <footer>
+    <div>📩 Contacto: norkevinfoto@gmail.com &middot; WhatsApp +502 3164 8254</div>
+    <div style="margin-top:8px;opacity:.7">Reporte generado el 01-jul-2026 &middot; Confidencial para Marvin Rustrian</div>
+    <div style="margin-top:8px"><a href="https://wa.me/50231648254" style="color:#7c3aed;font-weight:600;text-decoration:none">¿Dudas? Escribinos por WhatsApp →</a></div>
+  </footer>
+</div>
+</body>
+</html>
